@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./recursos/estilos/estilos.css">
+
+</head>
+<body>
+    <!-- header: contenido introductorio (título y navegación) -->
+    <header class="encabezado-principal">
+        <h1>
+            Modelo de caja
+        </h1>
+
+        <!-- nav: bloque principal de enlaces, acá navega dentro de la misma página -->
+        <nav class="vinculos">
+            <a href="#content-box">
+                content-box
+            </a>
+            <a href="#border-box">
+                border-box
+            </a>
+            <a href="#herencia">
+                Herencia
+            </a>
+        </nav>
+    </header>
+
+    <!-- main: contenido principal y único de la página -->
+    <main class="contenido-principal">
+
+        <!-- section: parte temática, siempre con su título -->
+        <section id="content-box" class="seccion">
+            <h2>
+                1. Antes: content-box (por defecto)
+            </h2>
+            <p>
+                Width 200px, height 100px, padding 20px y borde 10px.
+                El padding y el borde se suman por fuera: la caja mide 260 x 160 px.
+            </p>
+
+            <!-- article: cada caja es una pieza autónoma -->
+            <article class="caja caja-estandar">
+                <h3>
+                    content-box
+                </h3>
+                <p>
+                    260 x 160 px
+                </p>
+            </article>
+        </section>
+
+        <section id="border-box" class="seccion">
+            <h2>
+                2. Después: border-box (reseteo global)
+            </h2>
+            <p>
+                Mismas medidas: width 200px, height 100px, padding 20px y borde 10px.
+                El padding y el borde quedan dentro: la caja mide 200 x 100 px.
+            </p>
+
+            <article class="caja caja-alternativa">
+                <h3>
+                    border-box
+                </h3>
+                <p>
+                    200 x 100 px
+                </p>
+            </article>
+        </section>
+
+        <section id="herencia" class="seccion">
+            <h2>
+                3. ¿Se hereda box-sizing?
+            </h2>
+            <p>
+                No se hereda: si un elemento no la declara, usa su valor por defecto (content-box),
+                aunque su padre tenga border-box. Por eso el reseteo usa el selector universal.
+            </p>
+            <p>
+                Para comprobarlo: en DevTools desactivá la regla del selector universal y escribí
+                box-sizing: border-box solo en body. En la pestaña Computed, los elementos
+                hijos siguen en content-box.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- footer: pie de la página -->
+    <footer class="pie-principal">
+        <ul class="contactos">
+            <li>
+                Aplicaciones Web I - Cátedra B
+            </li>
+            <li>
+                Martina Diesenberg
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
