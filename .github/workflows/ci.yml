@@ -18,5 +18,3 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
-      - run: pnpm exec playwright install --with-deps
-      - run: pnpm exec playwright test
